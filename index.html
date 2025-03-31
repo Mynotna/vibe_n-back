@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Back Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>N-Back Challenge</h1>
+
+        <div class="session-controls">
+            <button id="start-session-btn">Start Session</button>
+            <button id="reset-session-btn">Reset Session (n=1)</button>
+        </div>
+
+        <div class="game-info">
+            <span id="n-level">N = 1</span> |
+            <span id="game-counter">Game: 0/10</span> |
+            <span id="trial-counter">Trial: 0/20</span>
+        </div>
+
+        <div id="grid-container" class="grid">
+            <div class="grid-cell" data-position="1"></div>
+            <div class="grid-cell" data-position="2"></div>
+            <div class="grid-cell" data-position="3"></div>
+            <div class="grid-cell" data-position="4"></div>
+            <div class="grid-cell center-cell" data-position="5"></div>
+            <div class="grid-cell" data-position="6"></div>
+            <div class="grid-cell" data-position="7"></div>
+            <div class="grid-cell" data-position="8"></div>
+            <div class="grid-cell" data-position="9"></div>
+        </div>
+
+        <div id="feedback" class="feedback-indicator"></div>
+
+        <div class="game-controls">
+            <button id="match-btn" disabled>Match</button>
+            <button id="no-match-btn" disabled>No Match</button>
+        </div>
+
+        <div id="notification-area" class="notification"></div>
+        <div id="game-summary" class="summary"></div>
+        <div id="session-summary" class="summary session-report"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
