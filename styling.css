@@ -1,0 +1,172 @@
+/* General Styling & Dark Mode Theme */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    user-select: none; /* Prevent text selection during gameplay */
+}
+
+.app-container {
+    background-color: #2c2c2c; /* Slightly lighter dark shade */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    color: #00e676; /* Neon green accent */
+    margin-bottom: 20px;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 240px; /* Adjust size as needed */
+    height: 240px;
+    margin: 25px auto;
+    perspective: 1000px; /* For potential 3D effects */
+}
+
+.grid-cell {
+    background-color: #444; /* Darker cell background */
+    border: 1px solid #555;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #f0f0f0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.grid-cell.center-cell {
+    background-color: #333; /* Grayed out center */
+    border-color: #444;
+    cursor: default;
+}
+
+.grid-cell.active {
+    background-color: #00e676; /* Neon green highlight */
+    color: #1a1a1a; /* Dark text on highlight */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00e676;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Controls */
+.session-controls, .game-controls {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #00e676; /* Neon green */
+    color: #1a1a1a;
+    border: none;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #00c853; /* Darker green on hover */
+}
+
+button:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+button:disabled {
+    background-color: #555;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Info and Feedback */
+.game-info {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #aaa;
+}
+
+.feedback-indicator {
+    height: 10px;
+    width: 80%;
+    max-width: 300px;
+    margin: 15px auto;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-indicator.correct {
+    background-color: #4caf50; /* Green for correct */
+}
+
+.feedback-indicator.incorrect {
+    background-color: #f44336; /* Red for incorrect */
+}
+
+.notification, .summary {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 20px; /* Ensure space is reserved */
+}
+
+.notification {
+    background-color: #3f51b5; /* Info blue */
+    color: #fff;
+    font-weight: bold;
+}
+
+.summary {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.session-report {
+    border: 1px solid #00e676;
+    padding: 15px;
+    text-align: left;
+}
+.session-report p {
+    margin: 8px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 20px;
+    }
+    .grid {
+        width: 180px;
+        height: 180px;
+    }
+    .grid-cell {
+        font-size: 1.5em;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
